@@ -27,7 +27,7 @@ class Instructor extends Person {
     changeGrade(student) {
         let changeGradeBy = Math.floor(Math.random() * Math.floor(10)) * (Math.random() < 0.5 ? -1 : 1)
         student.grade += changeGradeBy;
-        console.log(`${this.name} changed ${student.name}'s grade by ${changeGradeBy} points`);
+        console.log(`${this.name} changed ${student.name}'s grade by ${changeGradeBy} points. ${student.name}'s new grade is ${student.grade}`);
     }
 }
 
@@ -47,6 +47,13 @@ class Student extends Person {
     }
     sprintChallenge(subject) {
         console.log(`${this.name} has begun sprint challenge on ${subject}`);
+    }
+    graduateStudent() {
+        if (this.grade > 70) {
+            console.log(`Congratulations ${this.name} you have graduated from Lambda School`);
+        } else {
+            console.log(`Keep doing working on more assignments until your grade is above 70%`);
+        }
     }
 }
 
@@ -168,3 +175,12 @@ joshKnell.changeGrade(timothyShores);
 joshKnell.changeGrade(timothyShores);
 joshKnell.changeGrade(timothyShores);
 joshKnell.changeGrade(timothyShores);
+joshKnell.changeGrade(timothyShores);
+joshKnell.changeGrade(timothyShores);
+joshKnell.changeGrade(timothyShores);
+joshKnell.changeGrade(timothyShores);
+joshKnell.changeGrade(timothyShores);
+joshKnell.changeGrade(timothyShores);
+joshKnell.changeGrade(timothyShores);
+joshKnell.changeGrade(timothyShores);
+timothyShores.graduateStudent();
