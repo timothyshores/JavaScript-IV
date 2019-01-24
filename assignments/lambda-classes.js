@@ -24,6 +24,11 @@ class Instructor extends Person {
     grade(student, subject) {
         console.log(`${student.name} receives a perfect score on ${subject}'`);
     }
+    changeGrade(student) {
+        let changeGradeBy = Math.floor(Math.random() * Math.floor(10)) * (Math.random() < 0.5 ? -1 : 1)
+        student.grade += changeGradeBy;
+        console.log(`${this.name} changed ${student.name}'s grade by ${changeGradeBy} points`);
+    }
 }
 
 class Student extends Person {
@@ -32,11 +37,10 @@ class Student extends Person {
         this.previousBackground = props.previousBackground;
         this.className = props.className;
         this.favSubjects = props.favSubjects;
+        this.grade = 90;
     }
     listSubjects() {
-        this.favSubjects.forEach(function (subject) {
-            console.log(`${subject}`);
-        });
+        this.favSubjects.forEach(subject => console.log(`${subject}`));
     }
     PRAssignment(subject) {
         console.log(`${this.name} has submitted a PR for ${subject}`);
@@ -136,7 +140,6 @@ javontayMcElroy.PRAssignment('Javascript III');
 javontayMcElroy.sprintChallenge('Javascript III');
 console.log('');
 
-
 console.log('Student Tests - Justin Davis ');
 justinDavis.listSubjects();
 justinDavis.PRAssignment('Javascript II');
@@ -157,3 +160,11 @@ console.log('Project Manager Tests - Ryan Borgis');
 ryanBorgis.standUp('#web17_ryan');
 ryanBorgis.debugsCode(timothyShores, 'Javascript IV');
 console.log('');
+
+console.log('Strech Problem');
+joshKnell.changeGrade(timothyShores);
+joshKnell.changeGrade(timothyShores);
+joshKnell.changeGrade(timothyShores);
+joshKnell.changeGrade(timothyShores);
+joshKnell.changeGrade(timothyShores);
+joshKnell.changeGrade(timothyShores);
